@@ -1,4 +1,4 @@
-# Cheatsheet for BIG-SA Introduction to BASH Workshop
+# Cheatsheet for UofABioinformaticsHub Introduction to BASH Workshop
 
 
 

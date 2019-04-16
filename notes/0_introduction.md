@@ -3,7 +3,7 @@
 
 # Introduction
 
-[Opening Presentation](https://gitpitch.com/BIG-SA/BASH-Intro-2018/)
+[Opening Presentation](https://gitpitch.com/UofABioinformaticsHub/BASH-Intro/)
 
 ## General Information
 
@@ -158,4 +158,4 @@ These will not make a difference to your work during the workshop but may help y
 When you find different uses of commands and options, read the documentation for the tool to understand the differences.
 
 
-[Home](https://big-sa.github.io/BASH-Intro-2018/)
+[Home](https://UofABioinformaticsHub.github.io/BASH-Intro/)
