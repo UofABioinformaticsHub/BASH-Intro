@@ -23,7 +23,7 @@
 
 ## Session 2
 
-![DataStreams](https://ryanstutorials.net/linuxtutorial/img/streams.png)
+![DataStreams](https://raw.githubusercontent.com/UofABioinformaticsHub/BASH-Intro/master/images/2-streams.png)
 
 - A key principle was `stdout`
 - We learned to redirect this data stream (`|`, `>`, `>>`)
