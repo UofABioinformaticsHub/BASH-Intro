@@ -145,6 +145,7 @@ We will also need the file `BDGP6_genes.gtf` from previous session, so copy that
 
 Text editors (either CLI or GUI) are very convenient when you want to quickly edit a small text file (if you just want to read the file, you can use `less` or `cat`), however, they are less useful when the files are very large.
 
+<!-- Removed because too many people do them.
 Consider the following questions.
 **These are primarily thought exercises do not try to complete them!!!**
 **This is exactly what we're trying to teach you to avoid.**
@@ -179,7 +180,6 @@ For `GRCh38.chr22.ensembl.biomart.txt`:
 4. Too hard in **nano** (answer is 36).<br>
 5. Replacing one or all instances is possible. But replacing only values in specific columns is very tedious.<br>
 </details>  
-
 Now look into the files in the created sub-directory `3_many_files`.  
 
 1) Open the file **`datafile1`** in nano. Does it contain an entry for "MAPK1"?  
@@ -199,6 +199,7 @@ Hopefully by now you can appreciate that using text editors are not the best way
 As an aside, usually when you are working in BASH (or some other Linux/UNIX CLI) and you find yourself doing something repetitively, then there is probably a better way of doing it.
 In the rest of this session, we will examine three of the most commonly used CLI tools for working with large text data sets: `grep`, `sed`, and `awk`.  
 
+-->
 -----
 
 ### Primer on Linux Command Structure
