@@ -282,7 +282,7 @@ Fortunately the terminal has a special feature which aids in completing this tas
 This is the ability to automatically complete a command, file or directory name using the <kbd>Tab</kbd> key. Try typing
 
 ```
-ls ~/Down<tab>
+ls ~/R_<tab>
 ```
 
 where `<tab>` represents the <kbd>Tab</kbd> key.
@@ -297,7 +297,7 @@ The most common error we’ll see today will be mistakes in file paths caused by
 Now enter
 
 ```
-ls ~/D<tab>
+ls ~/R<tab>
 ```
 
 and for most of you, it will look like the auto-complete is not working.
