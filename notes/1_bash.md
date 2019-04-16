@@ -289,7 +289,7 @@ ls ~/R_<tab>
 
 where `<tab>` represents the <kbd>Tab</kbd> key.
 
-Notice how `Downloads` is completed automatically!
+Notice how `R_training` is completed automatically!
 This functionality will automatically fill as far as it can until conflicting options are reached.
 In this case, there was only one option so it was able to complete all the way to the end of the file path.
 This enables us to quickly enter long file paths without the risk of typos.
