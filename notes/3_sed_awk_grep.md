@@ -73,9 +73,9 @@ cd Bash_Workshop/files
 **Question:** What did the `-p` argument do in the above `mkdir` command, and was it necessary?
 
 1) Download and uncompress the file [`GRCh38.chr22.ensembl.biomart.txt.gz`](../files/GRCh38.chr22.ensembl.biomart.txt.gz) into the newly-created `files` directory, **keeping the original** as well as the uncompressed version.
-You can use the commands `curl` to download this
+You can use the command `curl` to download this
 
-  (*Hint: One method to extract a file whilst keeping the original is to use `zcat file.txt.gz > file.txt`. If you have gunzip version >1.6 you can also use the `-k` option. Check your version using `gunzip --version` and decide on the best method*)  
+  (*Hint: If you have gunzip version >=1.6 you can use the `--keep` (`-k` for short) option. Check your version using `gunzip --version`. If your version of gunzip doesn't support the `-k` option, you can use `zcat file.txt.gz > file.txt`.*)  
 
 2) Download and extract the file [`3_many_files.tar.gz`](../files/3_many_files.tar.gz) in the `files` directory.
 This should create a sub-directory (`3_many_files`) containing 100 files, where each file contains a subset of the data in `GRCh38.chr22.ensembl.biomart.txt.gz`.
@@ -93,6 +93,17 @@ This should create a sub-directory (`3_many_files`) containing 100 files, where 
   - How many columns does it contain? (*Hint: You'll have to do it manually, we'll be learning the actual tool later.*)
   - Are there column headers, and if so what are they?
   - Which column is "**Gene name**"? How many unique gene names are there in the file? (*Hint: Use `cut`, `sort`, `uniq` and `wc`*)
+
+<details><summary><b>Answers</b></summary>
+
+1. 95M<br>
+2. 99,263,344 characters, 11,882,712 words and 198,886 lines.<br>
+3. <br>
+4. Tabs.<br>
+5. 21 columns.<br>
+6. Yes, the first row. It contains `Gene stable ID`, `Transcript stable ID` etc.
+7. Column 12.
+</details>  
 
 4) Can you answer the above questions without uncompressing the original file?
 
@@ -162,9 +173,9 @@ For `GRCh38.chr22.ensembl.biomart.txt`:
 
 <details><summary><b>Answers</b></summary>
 
-1. 55151<br>
+1. 55,151<br>
 2. 1 line only<br>
-3. Too many to count in **nano** (but the answer is 5775).<br>
+3. Too many to count in **nano** (but the answer is 5,775).<br>
 4. Too hard in **nano** (answer is 36).<br>
 5. Replacing one or all instances is possible. But replacing only values in specific columns is very tedious.<br>
 </details>  
@@ -202,7 +213,7 @@ However, feel free to continue on if you already understand the topic.
 # `grep`
 
 
-**`grep`**<sup>[3]</sup> (Global search for a Regular Expression and Print) is an utility for searching fixed-strings or regular expressions in plain text files. The basic syntax of a grep command requires two arguments:
+**`grep`**<sup>[3]</sup> gets it's name from the `ed` command `g/re/p` (**G**lobally search a **R**egular **E**xpression and **P**rint). It is a utility for searching fixed-strings or regular expressions in plain text files. The basic syntax of a grep command requires two arguments:
 
 ```
 grep [PATTERN] [FILE]
@@ -322,22 +333,19 @@ grep -wi Zen BDGP6_genes.gtf
 
 If we want to extract the entries for genes "Ada" and "Zen", we can search for them separately, but this can become tedious quickly.
 
-One method to search for multiple terms at the same time is to use *extended* grep, which is enabled by the option `-E`. (Or simply use the command `egrep`, which is the same as `grep -E`):
+One method to search for multiple terms at the same time is to use *extended* grep, which is enabled by the option `-E`:
 
 ```
 grep -Ewi "(Ada|Zen)" BDGP6_genes.gtf
 ```
 
-This is the same as: 
+Most Linux systems also have an `egrep` command which is capable of doing the same sort of thing. However, it's use is not recommended: 
 
 ```
 egrep -wi "(Ada|Zen)" BDGP6_genes.gtf
 ```
 
-(Many people actually use `egrep` as their default tool as there really is minimal advantage to using `grep`.)
-
-
-While the above may work fine for just a few terms, if we want to search for many terms  this can still be rather tedious. We can try using the `-f` option instead.
+While the above may work fine for just a few terms, if we want to search for many terms  this can still be rather tedious. We can supply all the terms we want to search for via a file and use the `-f` option.
 
 For example if we want to search for the genes *Ace, Ada, Zen, Alc, Alh, Bdp1, Bft & bwa*.
 
@@ -457,7 +465,7 @@ Similarly we use dollar sign ($) to look for strings anchor at the end of the li
 cut -f 2 -d ";" BDGP6_genes.gtf | cut -f 2 -d\" | grep -v "^#" | sort | uniq > fly_genes
 ```
 
-Can you explain what the command above is doing? A good way of testing a complex command line is to simply break it down and examine the output from each section.
+Can you explain what the command above is doing? A good way of testing a complex command line is to simply break it down and examine the output from successive addition of each command from the pipeline:
 
 ```
 cut -f 2 -d ";" BDGP6_genes.gtf
@@ -466,7 +474,7 @@ cut -f 2 -d ";" BDGP6_genes.gtf | cut -f 2 -d\" | grep -v "^#"
 cut -f 2 -d ";" BDGP6_genes.gtf | cut -f 2 -d\" | grep -v "^#" | sort | uniq > fly_genes
 ```
 
-2) Extract from the file created above ("fly_genes") gene names that:
+2) Extract from the `fly_genes` file the gene names which:
 
 - start with "z"
 - start with "a" and ends with a numeral
@@ -490,7 +498,9 @@ If you look into the help page for `grep`, you will see that `grep` has 4 differ
 1. `-G/--basic-regexp` is the default basic mode;
 2. `-E/--extended-regexp` is the extended mode we have used earlier;
 3. `-P/--perl-regexp` supports the Perl-style regular expression, while;
-4. `-F/--fixed-strings` only performs exact matches.<sup>[4]</sup> Using the extended or Perl modes, you can perform even more complex and flexible searches.
+4. `-F/--fixed-strings` only performs exact matches.<sup>[4]</sup>
+
+Using the extended or Perl modes, you can perform even more complex and flexible searches. However, if you are only searching for fixed strings, use the `-F` option as it is much faster, especially when searching for lots of patterns specified in a file using `-f`.
 
 Unfortunately we don't have time to cover it all in this session, but if you wish to learn more about it, you should look up `grep` tutorials online.
 
