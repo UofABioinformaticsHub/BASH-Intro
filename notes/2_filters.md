@@ -55,7 +55,7 @@ You should see a file in this folder called `BDGP6_genes.gtf`, so let's move thi
 After that we'll move into this folder.
 
 ```
-mv BDGP6_genes.gtf Bash_Workshop
+mv ~/data/BDGP6_genes.gtf ~/Bash_Workshop
 ```
 
 #### Question
