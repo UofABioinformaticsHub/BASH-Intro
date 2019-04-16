@@ -75,7 +75,7 @@ See "man sudo_root" for details.
 
 ```
 
-Your terminal will also now have the value `trainee@Intro-NGS-xxx:~$` at the far left and this is your machine identifier.
+Your terminal will also now have the value `trainee@fib_2019-xxx:~$` at the far left and this is your machine identifier.
 It's mostly irrelevant information for you, but is just a check that you're in the correct place.
 
 ### Note for PuTTY users
