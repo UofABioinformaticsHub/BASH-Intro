@@ -30,7 +30,7 @@ Today:
 
 ### Filters
 
-![DataStreams](https://ryanstutorials.net/linuxtutorial/img/streams.png)
+![DataStreams](https://raw.githubusercontent.com/UofABioinformaticsHub/BASH-Intro/master/images/2-streams.png)
 
 Many NGS tools use these streams:
 
