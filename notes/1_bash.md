@@ -202,6 +202,8 @@ This has introduced an important shortcut (`~`) which contains the address for y
 
 ![Home is where the ~ is.](../images/1_bash_ADM3A-keyboard.png "Photo credit vintagecomputer.ca")
 
+(Why is the your home directory represented by `~`?)
+
 We can check this using the `echo` command, which prints text to our terminal (formally known as standard output, but we'll get to that later.)
 
 ```
