@@ -401,7 +401,7 @@ The star symbol `*` is also used by `grep`, but it means to match any number of 
 `grep` provides a more restrictive pattern matching through the use of square brackets: `[]`. Any letters inside the square brackets is allowed. For example:
 
 - `a[bc]d` will match `abd` and `acd`
-- `a[a-z]e` will match everything from `aaa`, `abe`, ... to `aze`, the dash means a range.
+- `a[a-z]e` will match everything from `aae`, `abe`, ... to `aze`, the dash means a range.
 - `a[0-5]e` will match `a0e`, `a1e`, `a2e`, `a3e`, `a4e` and `a5e`, so range works for numerics too.
 
 The following command is looking for entries with any lines matching `ada`, `adc`, `ala` and `alc`:
