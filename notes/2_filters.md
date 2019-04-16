@@ -51,7 +51,7 @@ Login to your VM if you haven't already and navigate to your home folder.
 cd ~
 ```
 
-You should see a file in this folder called `BDGP6_genes.gtf`, so let's move this into the `Bash_Workshop` folder we created in the last session.
+You should see a file in the `~/data` folder called `BDGP6_genes.gtf`, so let's move this into the `Bash_Workshop` folder we created in the last session.
 After that we'll move into this folder.
 
 ```
