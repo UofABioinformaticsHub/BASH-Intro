@@ -17,7 +17,6 @@
 - [2 Filters](notes/2_filters.md)
 - [3 Grep and Sed ](notes/3_sed_awk_grep.md)
 - [4 Writing Bash Scripts](notes/4_easy_scripting.md)
-- [Optional: More Advanced Scripting Techniques](notes/4_bash_scripting.md)
 
 # Course Schedule
 
